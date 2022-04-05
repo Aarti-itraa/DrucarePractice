@@ -85,6 +85,28 @@ public class FunctionalInterfaceDemo {
 		
 		//4.Function ->.single i/p, another as o/p 
 		
+		System.out.println("\n---------------- Function Output-------------\n");
+
+		Function<String, String> f1 = name ->name.toLowerCase();
+		Function<String, String> f2 = name ->name.toUpperCase();
+
+		System.out.println("Function in Lowercase"+f1.apply("HELLO"));	//apply -abstract()
+		System.out.println("Function in Uppercase"+f2.apply("hiii"));
+		
+		System.out.println("And Than "+f1.andThen(f2).apply("Java 8 FI"));
+		System.out.println("Compose "+f1.compose(f2).apply("JAVA 8 FI"));
+		
+		
+		//4.BiFunction ->two i/p, another as o/p
+		System.out.println("--------BIFunction Example-------");
+		BiFunction<String, String, String> bif =( a,b)->(a+" "+b).toUpperCase();
+		
+		BiFunction<Integer, Integer, Integer> bif1 =( a,b)->(a+b);
+
+		//BiFunction<String, String, String> bif2 =( a,b)->(a+" "+b);
+		System.out.println("BiFunction "+bif.apply("Hello", "Java"));
+		System.out.println("BiFunction Integer "+ bif1.apply(10, 20)) 
+		
 	}
 
 }
