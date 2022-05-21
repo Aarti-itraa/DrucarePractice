@@ -1,15 +1,14 @@
-package com.spring.jdbc.service;
+package com.spring.jdbc.dao;
 
 import java.util.List;
 
 import com.spring.jdbc.model.Employee;
 
-public interface EmployeeService {
+public interface EmployeeDAO {
 
-	public Boolean addEmployeeByMap(List<Employee> emp);
-
+	public Boolean addEmployeeByMap(List<Employee> empList);
+	
 	public Boolean addEmployeeDetailsMSPS(List<Employee> employeeList);
 
 	public Boolean addEmployeeByBatch(List<Employee> employeeList);
-
 }
